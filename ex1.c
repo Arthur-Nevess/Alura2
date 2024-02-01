@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+
 int main()
 {
     //DEFININDO VARIAVEIS
@@ -11,7 +13,9 @@ int main()
     int numerosec;
     srand(time(0));
     int operador = rand;
-    numerosec = operador % 100 ;
+    numerosec = abs (operador % 100);
+    int achou=0;
+    
   
 
 
@@ -31,22 +35,28 @@ int main()
     switch(nivel)
     {
         case 1:
-        {
-            printf("você tem 12 cances\n");
+        {   
+            printf("==================\n");
+            printf("[você tem 12 cances]\n");
+            printf("==================\n");
             chances=12;
             break;
         }
 
         case 2: 
         {
-            printf("você tem 10 cances\n");
+            printf("==================\n");
+            printf("[você tem 10 cances]\n");
+            printf("==================\n");
             chances=10;
             break;
         }
 
         case 3:
-        {
-            printf("você tem 7 cances\n");
+        {   
+            printf("=================\n");
+            printf("[você tem 7 cances]\n");
+            printf("=================\n");
             chances=7;
             break;
         }
@@ -54,6 +64,8 @@ int main()
         default:
         {
             printf("ERRO!! (NÃO DEI ESSA OPÇÃO)");
+
+            main;
         }
 
     }
@@ -61,12 +73,25 @@ int main()
     //PEGANDO O CHUTE DO USUARIO
 
     for(int i=0; i<chances;i++)
-    {
-        printf("chance %d de %d\n", i, chances);
+    {   
+        if(chances!=i+1)
+        {
+        printf("_________________\n");
+        printf("chance %d de %d\n", i+1, chances);
+        printf("_________________\n");
+        }
+        else
+        {
+            printf("_________________\n");
+            printf("ULTIMA CHANCE\n");
+            printf("_________________\n");
+        }
+
+
         printf("DIGITE AQUI:");
         scanf("%d", &chute);
 
-
+    
         if(chute<numerosec)
         {
             printf("seu chute foi menor que o número secreto\n");
@@ -78,8 +103,15 @@ int main()
 
         else if(chute==numerosec)
         {
-            printf("PARABENS VOCÊ ACERTOU!!!");
+            achou=1;
             break;
+        }
+
+        else if(chute<0)
+        {
+            printf("Chute inválido");
+            i--;
+            continue;
         }
 
         else
@@ -89,6 +121,16 @@ int main()
             continue;
         }
 
+    }
+
+    if(achou)
+    {
+        printf("Na mosca, você acertou!!!\n");
+    }
+    else
+    {
+        printf("Perdeu, não foi desta vez!\n");
+        printf("O número secreto era %d\n", numerosec);
     }
     return 0;
 }
