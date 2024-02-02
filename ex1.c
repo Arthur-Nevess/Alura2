@@ -16,11 +16,7 @@ int main()
     numerosec = abs (operador % 100);
     int achou=0;
     
-  
-
-
-
-    // HEDER FILE
+    // HEADER 
     printf("===============================\n");
     printf("::   JOGO DE ADIVINHAÇÃO     ::\n");
     printf("===============================\n");
