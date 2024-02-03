@@ -14,7 +14,7 @@ int main()
     srand(time(0));
     int operador = rand;
     numerosec = abs (operador % 100);
-    int achou=0;
+    int achou = 0;
     
     // HEADER 
     printf("===============================\n");
@@ -33,7 +33,7 @@ int main()
         case 1:
         {   
             printf("==================\n");
-            printf("[você tem 12 cances]\n");
+            printf("[você tem 12 chances]\n");
             printf("==================\n");
             chances=12;
             break;
@@ -42,7 +42,7 @@ int main()
         case 2: 
         {
             printf("==================\n");
-            printf("[você tem 10 cances]\n");
+            printf("[você tem 10 chances]\n");
             printf("==================\n");
             chances=10;
             break;
@@ -51,7 +51,7 @@ int main()
         case 3:
         {   
             printf("=================\n");
-            printf("[você tem 7 cances]\n");
+            printf("[você tem 7 chances]\n");
             printf("=================\n");
             chances=7;
             break;
@@ -59,7 +59,7 @@ int main()
 
         default:
         {
-            printf("ERRO!! (NÃO DEI ESSA OPÇÃO)");
+            printf("ERRO!! NÃO DEI ESSA OPÇÃO");
 
             main;
         }
@@ -72,9 +72,9 @@ int main()
     {   
         if(chances!=i+1)
         {
-        printf("_________________\n");
-        printf("chance %d de %d\n", i+1, chances);
-        printf("_________________\n");
+            printf("_________________\n");
+            printf("chance %d de %d\n", i+1, chances);
+            printf("_________________\n");
         }
         else
         {
