@@ -3,17 +3,17 @@
 #include <string.h>
 #include <time.h>
 
+# define MAX_PALAVRAS 100
+
 int main()
 {
-    char palavras[15];
+    char palavras[MAX_PALAVRAS];
     char chute[26];
     int acertou=0;
     int enforcou=0;
     int tentativa=0;
     char palpite;
     int usuario=0;
-    
-    
 
     puts("==============");
     puts("JOGO DE FORCA");
@@ -24,23 +24,20 @@ int main()
     puts("Para estados do Brasil, tecle 2");
     puts("Para profissões, tecle 3");
     scanf("%d", &usuario);
-    FILE *p;
-    p = fopen ("exa.txt", "r+");
-
 
 
    switch(usuario)
    {
         case 1:
         {         
+            FILE *p;
+            p = fopen ("exa.txt", "r");
             if(p == NULL)
             {
                 puts("Erro ao tentar executar o arquivo");
                 return 0;
             }
-
-            
-            
+         
             int qtddepalavas;
             fscanf(p,"%d", &qtddepalavas);
             srand(time(0));
@@ -53,6 +50,7 @@ int main()
             
 
           fclose(p);
+          break;
         }  
 
         case 2:
@@ -78,14 +76,11 @@ int main()
             }
 
                 fclose(p);
+                break;
         }  
-
-
 
    }
     
-    
-
     do
     {
         for(int i = 0; i < strlen(palavras); i++)
